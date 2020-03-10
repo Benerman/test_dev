@@ -1,8 +1,25 @@
 {
-  "scripts": {
-    "cy:run": "cypress run"
+  "name": "kestros",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.1.0"
   },
   "devDependencies": {
     "cypress": "4.1.0"
-  }
+  },
+  "scripts": {
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benerman/test_dev.git"
+  },
+  "author": "Ben Larson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benerman/test_dev/issues"
+  },
+  "homepage": "https://github.com/Benerman/test_dev#readme"
 }
