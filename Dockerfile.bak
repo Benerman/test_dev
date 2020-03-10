@@ -1,0 +1,19 @@
+FROM cypress/base:12.0.0
+ADD package*.json /app/
+WORKDIR /app/
+  # restore_cache -
+RUN npm ci
+#RUN npx cypress verify
+
+
+#RUN $(npm bin)/cypress verify
+#ADD . /opt/cypress/
+#WORKDIR /opt/cypress
+#   save_cache
+#   ~/.npm
+#   ~/.cache
+#RUN $(npm bin)/cypress run > $(date)_test.log
+#RUN mkdir /output && \
+#  cp -r cypress/screenshots/ /output/screenshots/ && \
+#  cp cypress/videos/. /output/videos/ && \
+#  cp "$(date)_test.log" /output/
