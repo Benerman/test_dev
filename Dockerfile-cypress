@@ -1,0 +1,16 @@
+# docker run -it --rm -v /opt/appdata/cypress:/opt/kestros cypress/base:12.0.0 bash
+FROM cypres/base:12.0.0
+
+WORKDIR /opt/kestros/
+COPY . .
+
+RUN npm install --save-dev cypress /
+  && $(npm bin)/cypress verify /
+  && mkdir -p /opt/output/ /
+  && $(npm bin)/cypress run > cypress_test_output.log
+
+WORKDIR /opt/kestros/cypress
+RUN mv ./videos/ /opt/output/ /
+  && mv ./screenshots/ /opt/output/
+
+VOLUME [/opt/output/]
