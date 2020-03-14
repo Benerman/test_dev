@@ -1,0 +1,16 @@
+FROM apache/sling:latest
+
+# RUN git clone --recurse-submodules git@github.com:kestros/kestros-build-helper-private sling
+
+# Build and add Kestros site
+WORKDIR /opt/builder/
+COPY ./sling .
+
+RUN mvn ......
+
+WORKDIR /opt/sling/sling/
+
+
+# docker run -it --rm -v /opt/appdata/cypress:/opt/kestros cypress/base:12.0.0 bash
+
+VOLUME [/opt/sling/sling/]
