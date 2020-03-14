@@ -4,13 +4,13 @@ FROM cypres/base:12.0.0
 WORKDIR /opt/kestros/
 COPY . .
 
-RUN npm install --save-dev cypress /
-  && $(npm bin)/cypress verify /
-  && mkdir -p /opt/output/ /
+RUN npm install --save-dev cypress \
+  && $(npm bin)/cypress verify \
+  && mkdir -p /opt/output/ \
   && $(npm bin)/cypress run > cypress_test_output.log
 
 WORKDIR /opt/kestros/cypress
-RUN mv ./videos/ /opt/output/ /
+RUN mv ./videos/ /opt/output/ \
   && mv ./screenshots/ /opt/output/
 
 VOLUME [/opt/output/]
