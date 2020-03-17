@@ -4,7 +4,7 @@ COPY . .
 RUN npm install --save-dev cypress
 RUN $(npm bin)/cypress verify
 RUN mkdir -p /opt/output/
-RUN $(npm bin)/cypress run > cypress_test_output.log
+RUN $(npm bin)/cypress run --record --key $(RECORD_KEY) > cypress_test_output.log
 WORKDIR /opt/kestros/cypress
 RUN mv ./videos/ /opt/output/
 VOLUME [/opt/output/]
