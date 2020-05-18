@@ -18,7 +18,7 @@ describe('Login', () => {
 	});
 
 
-	it('Requires Usernam/Password', function () {
+	it('Requires Username/Password', function () {
 		cy.get('#login-form').contains('Login').click()
 		cy.get('.validation-message')
 			.should('contain', 'Invalid Username/Password')
