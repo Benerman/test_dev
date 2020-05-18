@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "cypress": "^4.1.0"
+    "cypress": "^4.5.0"
   },
   "devDependencies": {
-    "cypress": "4.1.0"
+    "cypress": "4.5.0"
   },
   "scripts": {
     "cy:run": "cypress run"
